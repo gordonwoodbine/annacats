@@ -34,7 +34,7 @@ async function showNewCat() {
 }
 
 function saveCat() {
-  // console.log(catImg.src);
+  console.log(catGallery.children);
   document.querySelector('.fave-title').style.visibility = 'visible';
   const newFigure = document.createElement('figure');
   newFigure.classList.add('gallery-item');

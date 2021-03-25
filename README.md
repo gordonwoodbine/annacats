@@ -12,3 +12,4 @@ Practicing my CSS and JavaScript by building a cat gallery app thing for my frie
 - [ ] Have a way to delete images from gallery
 - [ ] Avoid adding duplicate images to gallery
 - [ ] Some form of gallery modal?
+- [ ] Add 'back to top' navigation
