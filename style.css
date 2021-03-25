@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Sancreek&display=swap');
+
+:root {
+  --site-yellow: #fdb700;
+}
+
+/* Reset and general styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Monda', sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Header section */
+
+header {
+  background-color: var(--site-yellow);
+  border-bottom: 4px solid #222;
+  padding: 0 1rem;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding: 1rem 0; */
+}
+
+header h1 {
+  font-family: 'Sancreek';
+  font-size: 4rem;
+  letter-spacing: 6px;
+  color: #222;
+  border-bottom: 4px solid #222;
+}
+
+.img-container {
+  height: 180px;
+  position: relative;
+  top: 20px;
+}
+
+.img-container img {
+  max-height: 100%;
+}
+
+/* Main body section */
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  flex: 1;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-wrapper > * {
+  margin: 1rem 0;
+}
+
+.img-wrapper {
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.cat-image {
+  max-height: 100%;
+  max-width: 90vw;
+  display: none;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.cat-loading {
+  font-size: 4rem;
+  color: rgb(20, 100, 220);
+  text-align: center;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+.new-btn {
+  font-size: 1.3rem;
+  padding: 0.5rem 1.5rem;
+  border-color: transparent;
+  background-color: rgb(20, 100, 220);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.new-btn:hover {
+  background-color: rgb(44, 128, 255);
+  transform: scale(1.1);
+}
+
+.new-btn:active {
+  transform: scale(1);
+}
+
+/* Used to show/hide the image/loading spinner */
+
+.show {
+  display: block;
+}
+
+/* Footer Section */
+
+footer {
+  background-color: var(--site-yellow);
+  color: #000;
+  text-align: center;
+  padding: 2rem;
+}
+
+footer a {
+  color: #000;
+}
+
+/* Media Queries */
+
+@media (max-width: 660px) {
+  .img-wrapper {
+    height: 400px;
+  }
+
+  #breeds {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    margin-bottom: 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  #breeds {
+    font-size: 1.2rem;
+  }
+
+  .img-wrapper {
+    height: 300px;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Animations */
+
+@keyframes spin {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
