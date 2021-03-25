@@ -1,12 +1,14 @@
-# show-me-dog
+# AnnaCats
 
-Learning how to fetch data from APIs with, obviously, dogs :)
+Practicing my CSS and JavaScript by building a cat gallery app thing for my friend Anna. Who is fond of cats, naturally.
 
-Currently live at https://gordonwoodbine.github.io/show-me-dog/
+## To do:
 
-![Screenshot of Project](./img/screenshot.jpg)
-
-Still to do:
-
-- [x] Add footer to page
-- [ ] Test browser compatability
+- [ ] Make responsive! Cos it ain't currently :(
+- [x] Add images to a favourites gallery
+- [ ] Style the gallery so it doesn't look shit
+- [ ] Save the gallery to local storage
+- [ ] Retrieve gallery from local storage (if one exists)
+- [ ] Have a way to delete images from gallery
+- [ ] Avoid adding duplicate images to gallery
+- [ ] Some form of gallery modal?
