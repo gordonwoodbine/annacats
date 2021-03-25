@@ -47,8 +47,26 @@ function saveCat(url) {
   // console.log(catGallery.children);
   document.querySelector('.fave-title').style.visibility = 'visible';
 
-  showInFavourites(url);
-  saveLocalCats(url);
+  if(!isDuplicate(url)) {
+    showInFavourites(url);
+    saveLocalCats(url);
+  } else {
+    console.log('duplicate!');
+  }
+}
+
+// Prevent adding duplicate images to Favourites
+function isDuplicate(url) {
+  let catArray;
+  if(localStorage.getItem('catArray') === null) {
+    return false;
+  } else {
+    catArray = JSON.parse(localStorage.getItem('catArray'));
+  }
+  if(catArray.indexOf(url) === -1) {
+    return false;
+  }
+  return true;
 }
 
 // Display cat picture in favourites section
@@ -101,7 +119,21 @@ function getLocalCats() {
   });
 }
 
+// Remove cat from local storage
+function deleteLocalCat(url) {
+  let catArray = JSON.parse(localStorage.getItem('catArray'));
+  const index = catArray.indexOf(url);
+  catArray.splice(index, 1);
+  localStorage.setItem('catArray', JSON.stringify(catArray));
+}
+
+// Click handler for images in Favourites section
 function checkAndDelete(e) {
+  if(e.target.classList[0] === 'icon') {
+    const removeURL = e.target.parentElement.previousSibling.src;
+    catGallery.removeChild(e.target.parentElement.parentElement);
+    deleteLocalCat(removeURL);
+  }
   if(e.target.classList[0] === 'gallery-img') {
     // catGallery.removeChild(e.target.parentElement);
     const targetURL = e.target.src;

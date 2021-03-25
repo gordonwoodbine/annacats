@@ -9,7 +9,8 @@ Practicing my CSS and JavaScript by building a cat gallery app thing for my frie
 - [x] Style the gallery so it doesn't look shit
 - [x] Save the gallery to local storage
 - [x] Retrieve gallery from local storage (if one exists)
-- [ ] Have a way to delete images from gallery
-- [ ] Avoid adding duplicate images to gallery
+- [x] Have a way to delete images from gallery
+- [x] Avoid adding duplicate images to gallery
+- [ ] Create 'Already in Favourites!' alert
 - [ ] Some form of gallery modal?
 - [ ] Add 'back to top' navigation
