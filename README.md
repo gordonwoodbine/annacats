@@ -14,3 +14,4 @@ Practicing my CSS and JavaScript by building a cat gallery app thing for my frie
 - [ ] Create 'Already in Favourites!' alert
 - [ ] Some form of gallery modal?
 - [ ] Add 'back to top' navigation
+- [x] Animate removing cats from gallery

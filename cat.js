@@ -131,8 +131,13 @@ function deleteLocalCat(url) {
 function checkAndDelete(e) {
   if(e.target.classList[0] === 'icon') {
     const removeURL = e.target.parentElement.previousSibling.src;
-    catGallery.removeChild(e.target.parentElement.parentElement);
-    deleteLocalCat(removeURL);
+    const item = e.target.parentElement.parentElement;
+    console.log(item);
+    item.classList.add('deleted');
+    item.addEventListener('transitionend', () => {
+      catGallery.removeChild(e.target.parentElement.parentElement);
+      deleteLocalCat(removeURL);
+    });
   }
   if(e.target.classList[0] === 'gallery-img') {
     // catGallery.removeChild(e.target.parentElement);
