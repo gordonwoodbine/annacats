@@ -219,13 +219,23 @@ footer a {
 
 /* Media Queries */
 
+@media (max-width: 1200px) {
+  .cat-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .img-wrapper {
     height: 400px;
   }
 
-  .cat-gallery {
-    grid-template-columns: repeat(2, 1fr);
+  .overlay {
+    height: 30%;
+  }
+
+  .icon {
+    font-size: 2rem;
   }
 }
 
