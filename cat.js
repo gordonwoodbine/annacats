@@ -12,6 +12,8 @@ function init() {
     catImg.classList.add('show');
   });
 
+  catImg.addEventListener('click', () => displayModal(catImg));
+
   const newCatBtn = document.querySelector('.new-btn');
   newCatBtn.addEventListener('click', () => {
     showNewCat(catImg);
@@ -140,22 +142,21 @@ function checkAndDelete(e) {
     });
   }
   if(e.target.classList[0] === 'gallery-img') {
-    const modal = document.querySelector('.modal');
-    const modalImg = document.querySelector('.modal-content');
-    const modalCaption = document.querySelector('.caption');
-    const targetURL = e.target.src;
-    const targetAlt = e.target.alt;
-
-    modal.style.display = 'block';
-    modalImg.src = targetURL;
-    modalCaption.innerHTML = targetAlt;
-
-    const closeBtn = document.querySelector('.close');
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-    })
-    
+    displayModal(e.target);
   }
+}
+
+function displayModal(img) {
+  const modal = document.querySelector('.modal');
+  const modalImg = document.querySelector('.modal-content');
+  const modalCaption = document.querySelector('.caption');
+
+  modal.style.display = 'block';
+  modalImg.src = img.src;
+  modalCaption.innerText = img.alt;
+
+  const closeBtn = document.querySelector('.close');
+  closeBtn.addEventListener('click', () => modal.style.display = 'none');
 }
 
 init();

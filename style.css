@@ -96,6 +96,7 @@ main {
   display: none;
   border: 3px solid black;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .cat-loading {
@@ -182,6 +183,7 @@ main {
   height: 20%;
   opacity: 0;
   transition: all 0.4s ease;
+  cursor: default;
 }
 
 .overlay:hover {
@@ -301,6 +303,10 @@ footer a {
 
   .icon {
     font-size: 2rem;
+  }
+
+  .modal-content {
+    width: 100%;
   }
 }
 
