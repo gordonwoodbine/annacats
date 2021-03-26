@@ -145,6 +145,17 @@ main {
   max-width: 1600px;
 }
 
+.gallery-item {
+  position: relative;
+  border: 3px solid transparent;
+  transition: border 0.4s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  border: 3px solid black;
+}
+
 .gallery-img {
   width: 100%;
   height: 100%;
@@ -153,6 +164,34 @@ main {
 
 .fave-title {
   visibility: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 20%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.icon {
+  color: #fff;
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 /* Used to show/hide the image/loading spinner */
@@ -170,19 +209,33 @@ footer {
   padding: 2rem;
 }
 
+footer p {
+  margin: 0.5rem 0;
+}
+
 footer a {
   color: #000;
 }
 
 /* Media Queries */
 
+@media (max-width: 1200px) {
+  .cat-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .img-wrapper {
     height: 400px;
   }
 
-  .cat-gallery {
-    grid-template-columns: repeat(2, 1fr);
+  .overlay {
+    height: 30%;
+  }
+
+  .icon {
+    font-size: 2rem;
   }
 }
 
