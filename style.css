@@ -226,6 +226,15 @@ footer a {
 }
 
 @media (max-width: 768px) {
+  header h1 {
+    font-size: 3rem;
+  }
+
+  .img-container {
+    height: 140px;
+    top: 16px;
+  }
+
   .img-wrapper {
     height: 400px;
   }
@@ -244,8 +253,34 @@ footer a {
     margin-bottom: 0;
   }
 
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .img-container {
+    height: 100px;
+    top: 12px;
+  }
+
+  main {
+    padding: 0 0.8rem;
+  }
+
   .img-wrapper {
     height: 300px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .new-btn {
+    margin-right: 0.5rem;
+  }
+
+  footer {
+    padding: 2rem 0.8rem;
   }
 
   footer p {
