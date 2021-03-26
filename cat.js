@@ -140,8 +140,21 @@ function checkAndDelete(e) {
     });
   }
   if(e.target.classList[0] === 'gallery-img') {
-    // catGallery.removeChild(e.target.parentElement);
+    const modal = document.querySelector('.modal');
+    const modalImg = document.querySelector('.modal-content');
+    const modalCaption = document.querySelector('.caption');
     const targetURL = e.target.src;
+    const targetAlt = e.target.alt;
+
+    modal.style.display = 'block';
+    modalImg.src = targetURL;
+    modalCaption.innerHTML = targetAlt;
+
+    const closeBtn = document.querySelector('.close');
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    })
+    
   }
 }
 
