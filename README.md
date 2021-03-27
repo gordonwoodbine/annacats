@@ -16,8 +16,7 @@ Current version lives at: https://gordonwoodbine.github.io/annacats/
 - [x] Retrieve gallery from local storage (if one exists)
 - [x] Have a way to delete images from gallery
 - [x] Avoid adding duplicate images to gallery
-- [ ] Create 'Already in Favourites!' alert
+- [x] Create 'Already in Favourites!' alert (aside: I'm doing this by flashing a red border on the image if it's already in the gallery. I have the feeling this is probably _horrible_ from an accessibility point of view)
 - [x] Some form of gallery modal?
-- [ ] Add 'back to top' navigation
 - [x] Animate removing cats from gallery
-- [ ] Add cat fact to modal text?
+- [ ] Add 'back to top' navigation

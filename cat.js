@@ -48,12 +48,21 @@ async function showNewCat(catImg) {
 function saveCat(url) {
   // console.log(catGallery.children);
   document.querySelector('.fave-title').style.visibility = 'visible';
+  const catImg = document.querySelector('.cat-image');
 
   if(!isDuplicate(url)) {
+    catImg.classList.add('green-border');
+    setTimeout(() => {
+      catImg.classList.remove('green-border');
+    }, 500);
     showInFavourites(url);
     saveLocalCats(url);
   } else {
-    console.log('duplicate!');
+    catImg.classList.add('shake');
+    setTimeout(() => {
+      catImg.classList.remove('shake');
+    }, 500)
+    // console.log('duplicate!');
   }
 }
 
@@ -86,7 +95,7 @@ function showInFavourites(url) {
   // .. then create an overlay ...
   const overlay = document.createElement('div');
   overlay.classList.add('overlay');
-  overlay.innerHTML = '<i class="icon fas fa-times"></i>';
+  overlay.innerHTML = '<i class="expand-icon fas fa-expand"></i><i class="close-icon far fa-window-close"></i>';
 
   // ... then mash them together and append to the DOM
   newFigure.appendChild(newImg);
@@ -131,21 +140,22 @@ function deleteLocalCat(url) {
 
 // Click handler for images in Favourites section
 function checkAndDelete(e) {
-  if(e.target.classList[0] === 'icon') {
+  if(e.target.classList[0] === 'close-icon') {
     const removeURL = e.target.parentElement.previousSibling.src;
     const item = e.target.parentElement.parentElement;
-    console.log(item);
+    // console.log(item);
     item.classList.add('deleted');
     item.addEventListener('transitionend', () => {
       catGallery.removeChild(e.target.parentElement.parentElement);
       deleteLocalCat(removeURL);
     });
   }
-  if(e.target.classList[0] === 'gallery-img') {
-    displayModal(e.target);
+  if(e.target.classList[0] === 'expand-icon') {
+    displayModal(e.target.parentElement.previousSibling);
   }
 }
 
+// Functionality for the modal
 function displayModal(img) {
   const modal = document.querySelector('.modal');
   const modalImg = document.querySelector('.modal-content');
@@ -154,9 +164,17 @@ function displayModal(img) {
   modal.style.display = 'block';
   modalImg.src = img.src;
   modalCaption.innerText = img.alt;
-
+  /*
   const closeBtn = document.querySelector('.close');
   closeBtn.addEventListener('click', () => modal.style.display = 'none');
+  */
+
+  modal.addEventListener('click', (e) => {
+    const target = e.target.classList[0];
+    if(target != 'modal-content' && target != 'caption') {
+      modal.style.display = 'none';
+    }
+  });
 }
 
 init();
