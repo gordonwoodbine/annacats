@@ -329,18 +329,6 @@ footer a {
     grid-auto-rows: 30vw;
   }
 
-  .overlay {
-    height: 30%;
-  }
-
-  .expand-icon {
-    font-size: 1.5rem;
-  }
-
-  .close-icon {
-    font-size: 1.5rem;
-  }
-
   .modal-content {
     width: 90%;
   }
@@ -375,6 +363,15 @@ footer a {
 
   .new-btn {
     margin-right: 0.5rem;
+  }
+
+  .overlay {
+    height: 50%;
+  }
+
+  .expand-icon,
+  .close-icon {
+    font-size: 2rem;
   }
 
   .caption {
